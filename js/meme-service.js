@@ -18,29 +18,43 @@ var gImgs = [
     { id: 14, url: 'images/popo.jpg', keywords: ['funny puk'] }
 ];
 var gMeme = {
-    selectedimagesId: 5,
-    txts: [
-        {
-            line: 'I never eat Falafel',
-            size: 20,
-            align: 'left',
-            color: 'red'
-        }
-    ]
+    selectedImgId: 0,
+    txts: []
 }
-
-
 //get image by id 
 function returnImageByIdx(imageIdx) {
     return gImgs.find(function (img) { return gImgs.id === imageIdx });
 }
-
-function getImagesForDisplay(){
-
-
-
-
-
-
-    return 
+//get all imgs or filterd imgs
+function getImgsForDisplay(keyword = null) {
+    if (keywords === null) return gImgs;
+    return gImgs.filter((image) => {
+        image.keywords.forEach(word => {
+            return (word === keyword);
+        });
+    })
+}
+function addLine(newLine) {
+    const line = {
+        line: newLine.line,
+        size: newLine.size,
+        align: newLine.align,
+        color: newLine.color
+    }
+    gMeme.push(line);
+}
+function changeText(str, idx) {
+    gMeme.txts[idx].line = str;
+}
+function changeTextColor(color, idx) {
+    gMeme.txts[idx].color = color;
+}
+function changeTextAlign(align, idx) {
+    gMeme.txts[idx].align = align;
+}
+function changeTextSize(size, idx) {
+    gMeme.txts[idx].size = size;
+}
+function deleteLine(idx) {
+    gMeme.txts.splice(idx, 1);
 }
