@@ -54,6 +54,15 @@ header {
     height: 300px;
     object-fit: cover;
     margin: 10px;
+    border-radius: 50px;
+    border-style: double;
+    border-color: #3d3d8c;
+    border-width: 5px;
+}
+
+.gallery>img:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 
