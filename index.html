@@ -39,7 +39,13 @@
             <div class="editors flex">
                 <div class="editor flex direction-col">
                     <input type="text">
-                    <input onclick="getColor()" id="font-color" type="color" value="#ff0022">
+                    <div class="font-controls flex">
+                        <input onclick="getColor()" id="font-color" type="color" value="#ff0022">
+                        <input type="button" value="+" onclick="increaseFontSizeBy1px(event)">
+                        <input type="button" value="-" onclick="decreaseFontSizeBy1px(event)">
+                        <input type="button" value="⬆️" onclick="elevateText(event)">
+                    </div>
+
                     <input type="text">
                 </div>
             </div>
