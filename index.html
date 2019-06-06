@@ -41,9 +41,12 @@
                     <input type="text">
                     <div class="font-controls flex">
                         <input onclick="getColor()" id="font-color" type="color" value="#ff0022">
-                        <input type="button" value="+" onclick="increaseFontSizeBy1px(event)">
-                        <input type="button" value="-" onclick="decreaseFontSizeBy1px(event)">
+                        <input type="button" value="+" onclick="increaseFontSize(event)">
+                        <input type="button" value="-" onclick="decreaseFontSize(event)">
                         <input type="button" value="⬆️" onclick="elevateText(event)">
+                        <input type="button" value="⬇️" onclick="lowerText(event)">
+                        <!-- <button onclick="clearLine()" class="button">Delete</button> -->
+
                     </div>
 
                     <input type="text">
