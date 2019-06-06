@@ -23,7 +23,7 @@ var gMeme = {
 }
 //get image by id 
 function returnImageByIdx(imageIdx) {
-    return gImgs.find(function (img) { return gImgs.id === imageIdx });
+    return gImgs.find((img) => { return img.id === imageIdx });
 }
 //get all imgs or filterd imgs
 function getImgsForDisplay(keyword = null) {
