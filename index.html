@@ -9,7 +9,7 @@
     <title>sprint2 - Sergei & Tamir</title>
 </head>
 
-<body>
+<body onload="init()">
     <header class="flex container justify-center align-center space-between">
         <div class="logo">meme generator</div>
         <nav class="main-nav">
@@ -22,23 +22,23 @@
     </header>
     <section class="gallery container flex flex-wrap justify-center">
 
-        <img src="images/06.jpg">
-        <img src="images/01.jpg">
-        <img src="images/02.jpg">
-        <img src="images/03.jpg">
-        <img src="images/04.jpg">
+        <img src="images/00.jpg" onclick="changeImg(1)">
+        <img src="images/01.jpg" onclick="changeImg(2)">
+        <img src="images/02.jpg" onclick="changeImg(3)">
+        <img src="images/03.jpg" onclick="changeImg(4)">
+        <img src="images/04.jpg" onclick="changeImg(5)">
     </section>
 
     <section class="editor container flex space-between">
         <div class="canvas-container">
             <button>Back to gallery</button>
-            <div class="canvas"></div>
+            <canvas id="canvas"></canvas>
         </div>
 
         <div class="canvas-controls flex space-between direction-col">
             <div class="editors flex">
                 <div class="editor flex direction-col">
-                    <input type="text">
+                    <input type="text" onkeyup="onChangeText(0,this.value)">
                     <div class="font-controls flex">
                         <input onclick="getColor()" id="font-color" type="color" value="#ff0022">
                         <input type="button" value="+" onclick="increaseFontSize(event)">
@@ -49,12 +49,13 @@
 
                     </div>
 
-                    <input type="text">
+                    <input type="text" onkeyup="onChangeText(1,this.value)">
                 </div>
             </div>
             <button>Download</button>
         </div>
-    </section>
+    </section><script src="js/meme-service.js"></script>
+    <script src="js/canvas-controller.js"></script>
     <script src="js/main.js"></script>
 </body>
 
