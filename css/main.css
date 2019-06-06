@@ -1,0 +1,87 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: lato-regular;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: "lato-regular";
+    src: url('../fonts/lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: "lato-bold";
+    src: url('../fonts/lato/Lato-Bold.ttf');
+}
+
+
+/* base */
+
+/* header */
+header {
+    background-color: #323232;
+    color: white;
+    font-family: lato-bold;
+}
+
+.main-nav a{
+    font-family: lato-bold;
+    font-size: 1rem;
+    color:white;
+}
+.nav-bar li{
+    margin-right: 1rem;
+    text-transform: uppercase;
+}
+.logo{
+    text-transform: uppercase;
+    color: #2eb398;
+}
+
+/* gallery */
+
+.gallery>img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+}
+/* layout */
+
+.container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+/* helpers */
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.direction-col {
+    flex-direction: column;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.clean-list {
+    list-style: none;
+}
+.grid{
+    display: grid;
+}
