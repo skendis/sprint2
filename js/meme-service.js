@@ -25,14 +25,14 @@ var gMeme = {
             size: 1.8,
             align: 'center',
             color: 'white',
-            font: 'lato-bold'
+            font: 'impact'
         },
         {
             line: 'I never eat macdonalds again',
             size: 1.4,
             align: 'center',
             color: 'white',
-            font: 'lato-bold'
+            font: 'impact'
         }
     ]
 }
