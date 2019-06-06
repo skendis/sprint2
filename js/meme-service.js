@@ -18,8 +18,23 @@ var gImgs = [
     { id: 14, url: 'images/popo.jpg', keywords: ['funny puk'] }
 ];
 var gMeme = {
-    selectedImgId: 0,
-    txts: []
+    selectedImgId: 3,
+    txts: [
+        {
+            line: 'I never eat mcdonalds',
+            size: 1.8,
+            align: 'center',
+            color: 'white',
+            font: 'impact'
+        },
+        {
+            line: 'I never eat macdonalds again',
+            size: 1.4,
+            align: 'center',
+            color: 'white',
+            font: 'impact'
+        }
+    ]
 }
 //get image by id 
 function returnImageByIdx(imageIdx) {
