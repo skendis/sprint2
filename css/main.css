@@ -17,6 +17,10 @@ html {
     font-family: "lato-bold";
     src: url('../fonts/lato/Lato-Bold.ttf');
 }
+@font-face {
+    font-family: "impact";
+    src: url('../fonts/impact/impact.ttf');
+}
 
 
 /* base */
