@@ -30,7 +30,7 @@ function getKeywordMap(keywords) {
 }
 let storedKeywords = localStorage.getItem('keywords')
 let keywordsArr = JSON.parse(storedKeywords)
-    // console.log(keywordsArr);
+console.log(keywordsArr);
 
 let wordCloud = getKeywordMap(keywordsArr);
 console.log(wordCloud, 'word-cloud map');
