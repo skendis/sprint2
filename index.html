@@ -5,66 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>sprint2 - Sergei & Tamir</title>
+    <title>Meme generator</title>
 </head>
 
-<body onload="init()">
-    <header class="flex container justify-center align-center space-between">
-        <div class="logo">meme generator</div>
-        <nav class="main-nav">
-            <ul class="nav-bar flex clean-list">
-                <li><a href="#">home</a></li>
-                <li><a href="#">gallery</a></li>
-                <li><a href="#">about</a></li>
+<body>
+    <header class="flex container justify-center align-center">
+        <div class="hexagon flex justify-center align-center">
+            <div class="logo"></div>
+        </div>
+        <nav class="main-nav full-width">
+            <ul class="nav-bar clean-list flex justify-center align-center space-between">
+                <li><a href="">portfolio</a></li>
+                <li><a href="">about</a></li>
+                <li><a href="">blog</a></li>
+                <li><a href="">get in touch</a></li>
             </ul>
         </nav>
     </header>
-    <section class="gallery container flex flex-wrap justify-center">
-        <form class="search" action="/action_page.php" style="margin:auto;max-width:200px">
-            <input type="text" id="keyword-search" placeholder="Search for keyword..." />
-            <button type="submit" onclick="onKeywordSearch(event)"><i class="fa fa-search"></i></button>
-        </form>
+    <section class="editor container flex flex-wrap justify-center">
 
-        <img src="images/00.jpg" onclick="changeImg(1)">
-        <img src="images/01.jpg" onclick="changeImg(2)">
-        <img src="images/02.jpg" onclick="changeImg(3)">
-        <img src="images/03.jpg" onclick="changeImg(4)">
-        <img src="images/04.jpg" onclick="changeImg(5)">
-    </section>
-
-    <section class="editor container flex space-between">
         <div class="canvas-container">
-            <button>Back to gallery</button>
-            <canvas id="canvas"></canvas>
+            <canvas id="meme-canvas" width="400" height="400"></canvas>
         </div>
-
-        <div class="canvas-controls flex space-between direction-col">
-            <div class="editors flex">
-                <div class="editor flex direction-col">
-                    <input type="text" onkeyup="onChangeText(0,this.value)">
-                    <div class="font-controls flex">
-                        <input onclick="getColor()" id="font-color" type="color" value="#ff0022">
-                        <input type="button" value="+" onclick="increaseFontSize(event)">
-                        <input type="button" value="-" onclick="decreaseFontSize(event)">
-                        <input type="button" value="⬆️" onclick="elevateText(event)">
-                        <input type="button" value="⬇️" onclick="lowerText(event)">
-                        <!-- <button onclick="clearLine()" class="button">Delete</button> -->
-
+        <div class="flex direction-column space-betweeen">
+            <div class="controls">
+                <input type="text" name="line-input" id="" placeholder="Your line" class="line-input" onkeyup="onChangeText(1,this.value)">
+                <div class="flex justify-center">
+                    <div class="color-picker-container">
+                        <i class="fas fa-paint-brush"></i>
+                        <input class="jscolor" onchange="onChangeColor(1,this.value)">
                     </div>
-
-                    <input type="text" onkeyup="onChangeText(1,this.value)">
+                    <div class="font-picker-container">
+                        <i class="fas fa-font"></i>
+                        <select name="fontColor" id="fontColor">
+                            <option value="impact">impact</option>
+                            <option value="lato">lato</option>
+                            <option value="arial">arial</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center">
+                    <button class="editor-ui"><i class="fas fa-arrow-up"></i></button>
+                    <button class="editor-ui"><i class="fas fa-arrow-down"></i></button>
+                    <button class="editor-ui"><i class="fas fa-plus"></i></button>
+                    <button class="editor-ui"><i class="fas fa-minus"></i></button>
+                    <button class="editor-ui"><i class="fas fa-align-center"></i></button>
+                    <button class="editor-ui"><i class="fas fa-align-right"></i></button>
+                    <button class="editor-ui"><i class="fas fa-align-left"></i></button>
                 </div>
             </div>
-            <button>Download</button>
         </div>
     </section>
-    <script src="js/util-service.js"></script>
-    <script src="js/gallery-controller.js"></script>
+    <section class="gallery container flex justify-center">
+        <div class="flex justify-center flex-wrap">
+            <img src="images/00.jpg" onclick="changeImg(1)">
+            <img src="images/01.jpg" onclick="changeImg(2)">
+            <img src="images/02.jpg" onclick="changeImg(3)">
+            <img src="images/03.jpg" onclick="changeImg(4)">
+            <img src="images/04.jpg" onclick="changeImg(5)">
+
+        </div>
+    </section>
+
+
+
+    <script src="js/jscolor.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/canvas-controller.js"></script>
-    <script src="js/main.js"></script>
 </body>
 
 </html>

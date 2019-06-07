@@ -1,0 +1,158 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: lato-regular;
+}
+
+
+/* fonts */
+
+@font-face {
+    font-family: "lato-regular";
+    src: url('../fonts/lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: "lato-bold";
+    src: url('../fonts/lato/Lato-Bold.ttf');
+}
+
+@font-face {
+    font-family: "impact";
+    src: url('../fonts/impact/impact.ttf');
+}
+
+
+/* base */
+
+
+/* header */
+
+header {
+    background-color: #323232;
+    color: white;
+    font-family: lato-bold;
+}
+
+.main-nav a {
+    font-family: lato-bold;
+    font-size: 1rem;
+    color: white;
+}
+
+.nav-bar li {
+    margin-right: 1rem;
+    text-transform: uppercase;
+}
+
+.logo {
+    text-transform: uppercase;
+    color: #2eb398;
+}
+
+
+/* gallery */
+
+.gallery>img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 50px;
+    border-style: double;
+    border-color: #3d3d8c;
+    border-width: 5px;
+}
+
+.gallery>img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.search button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.search button:hover {
+    background: #0b7dda;
+}
+
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* layout */
+
+.container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+
+/* canvas editor */
+
+.canvas-controls {
+    height: 300px;
+}
+
+.editor button {
+    background-color: #2eb398;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* helpers */
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.direction-col {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.clean-list {
+    list-style: none;
+}
+
+.grid {
+    display: grid;
+}
