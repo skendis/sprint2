@@ -1,7 +1,5 @@
 'use strict'
 
-let keywords = []
-
 function saveToStorage(key, value) {
     keywords.push(value)
     localStorage.setItem(key, JSON.stringify(keywords))
