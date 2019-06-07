@@ -3,9 +3,8 @@
 let keywords = []
 
 function saveToStorage(key, value) {
-    let strValue = JSON.stringify(value)
-    keywords.push(strValue)
-    localStorage.setItem(key, keywords)
+    keywords.push(value)
+    localStorage.setItem(key, JSON.stringify(keywords))
 }
 
 function loadFromStorage(key) {
