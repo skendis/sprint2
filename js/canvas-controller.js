@@ -6,23 +6,13 @@ function init() {
     renderCanvas();
 }
 
-function changeImg(id){
-    gMeme.selectedImgId = id;
-    renderCanvas();
-
-}
-function onChangeText(line,text){
-    changeText(text,line);
-    renderCanvas();
-}
-
 function renderCanvas() {
     canvas = document.querySelector('#canvas');
     ctx = canvas.getContext('2d')
     var myImg = new Image();
 
     myImg.onload = function () {
-        canvas.width =300;
+        canvas.width = 300;
         canvas.height = 300;
         ctx.drawImage(myImg, 0, 0, canvas.width, canvas.height)
         ctx.shadowOffsetX = 2;
@@ -38,9 +28,17 @@ function renderCanvas() {
         }
     };
     myImg.src = `${returnImageByIdx(gMeme.selectedImgId).url}`;
-
 }
 
+function changeImg(id) {
+    gMeme.selectedImgId = id;
+    renderCanvas();
+
+}
+function onChangeText(line, text) {
+    changeText(text, line);
+    renderCanvas();
+}
 
 
 
