@@ -12,8 +12,8 @@ function renderCanvas() {
     var myImg = new Image();
 
     myImg.onload = function () {
-        canvas.width = myImg.width;
-        canvas.height = myImg.height;
+        canvas.width = 340;
+        canvas.height = 340;
         ctx.drawImage(myImg, 0, 0, canvas.width, canvas.height)
         ctx.shadowOffsetX = 2;
         ctx.shadowOffsetY = 2;
