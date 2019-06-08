@@ -15,6 +15,7 @@
     src: url('../fonts/impact/impact.ttf');
 }
 
+
 /* Base */
 
 * {
@@ -33,10 +34,12 @@ body {
     margin: 0;
 }
 
-ul, li {
+ul,
+li {
     padding: 0;
     margin: 0;
 }
+
 
 /* Header */
 
@@ -56,6 +59,7 @@ header a:hover {
     color: #2eb398;
     text-decoration-line: underline;
 }
+
 
 /* Logo */
 
@@ -82,7 +86,8 @@ header a:hover {
     margin: 86.60px 0;
 }
 
-.hexagon:before, .hexagon:after {
+.hexagon:before,
+.hexagon:after {
     content: "";
     position: absolute;
     width: 0;
@@ -103,7 +108,8 @@ header a:hover {
     margin: 28.87px 0;
 }
 
-.hexagon:before, .hexagon:after {
+.hexagon:before,
+.hexagon:after {
     content: "";
     position: absolute;
     width: 0;
@@ -122,6 +128,7 @@ header a:hover {
     border-top: 28.87px solid #323232;
 }
 
+
 /* Gallery */
 
 .gallery {
@@ -136,6 +143,7 @@ header a:hover {
     margin: 5px;
     border-radius: 15px;
 }
+
 
 /* editor */
 
@@ -208,12 +216,14 @@ header a:hover {
     border: 2px solid #2eb398;
 }
 
+
 /* Layout */
 
 .container {
     padding-left: 6.25px;
     padding-right: 6.25px;
 }
+
 
 /* Helpers */
 
