@@ -31,7 +31,11 @@ function renderCanvas() {
     myImg.src = `${returnImageByIdx(gMeme.selectedImgId).url}`;
 }
 
-
+function saveImg(elLink) {
+    const data = canvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'meme-generator.jpg';
+}
 
 function onUpText(line) {
     changeYpos(line, -0.01)
