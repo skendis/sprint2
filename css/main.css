@@ -278,3 +278,6 @@ header a:hover {
 .disabled {
     visibility: hidden;
 }
+.display-none{
+    display: none;
+}
