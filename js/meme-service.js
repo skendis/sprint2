@@ -18,24 +18,26 @@ var gImgs = [
     { id: 14, url: 'images/popo.jpg', keywords: ['funny puk'] }
 ];
 var gMeme = {
-        selectedImgId: 3,
-        txts: [{
-                line: 'I never eat McDonald\'s',
-                size: 40,
-                align: 'center',
-                color: 'white',
-                font: 'impact'
-            },
-            {
-                line: 'I never eat McDonald\'s again',
-                size: 40,
-                align: 'center',
-                color: 'white',
-                font: 'impact'
-            }
-        ]
+    selectedImgId: 3,
+    txts: [{
+        line: 'this is line 1',
+        size: 40,
+        align: 'center',
+        color: 'white',
+        font: 'Impact',
+        yPos: 0.2
+    },
+    {
+        line: 'this is line 2',
+        size: 40,
+        align: 'center',
+        color: 'white',
+        font: 'Impact',
+        yPos: 0.9
     }
-    //get image by id 
+    ]
+}
+//get image by id 
 function returnImageByIdx(imageIdx) {
     return gImgs.find((img) => { return img.id === imageIdx });
 }
@@ -48,7 +50,6 @@ function getImgsForDisplay(keyword = null) {
         });
     })
 }
-
 function addLine(newLine) {
     const line = {
         line: newLine.line,
@@ -58,23 +59,27 @@ function addLine(newLine) {
     }
     gMeme.push(line);
 }
-
 function changeText(str, idx) {
     gMeme.txts[idx].line = str;
 }
-
+function changeFont(font, idx) {
+    gMeme.txts[idx].font = `${font}`;
+}
 function changeTextColor(color, idx) {
     gMeme.txts[idx].color = `#${color}`;
 }
-
 function changeTextAlign(align, idx) {
     gMeme.txts[idx].align = align;
 }
-
-function changeTextSize(size, idx) {
-    gMeme.txts[idx].size = size;
+function increaseTextSize(size, idx) {
+    gMeme.txts[idx].size += size;
 }
-
+function decreaseTextSize(size, idx) {
+    gMeme.txts[idx].size -= size;
+}
 function deleteLine(idx) {
     gMeme.txts.splice(idx, 1);
+}
+function changeYpos(idx, amount) {
+    gMeme.txts[idx].yPos += amount;
 }
