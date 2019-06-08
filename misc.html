@@ -5,174 +5,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        #word-cloud {
+            height: 100vh;
+            width: 100vw;
+            margin: 0 auto;
+        }
+        
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
     <title>Document</title>
 </head>
 
 <body>
     <div id="word-cloud"></div>
 
-    <script>
-        /*  ======================= SETUP ======================= */
-        var config = {
-                trace: true,
-                spiralResolution: 1, //Lower = better resolution
-                spiralLimit: 360 * 5,
-                lineHeight: 0.8,
-                xWordPadding: 0,
-                yWordPadding: 3,
-                font: "sans-serif"
-            }
-            //to be replaced by the array from the localStorage
-        var words = ["words", "funhouse!", "apart", "from", "Steve", "fish"].map(function(word) {
-                return {
-                    word: word,
-                    freq: Math.floor(Math.random() * 50) + 10
+
+    <div class="search-word-cloud flex direction-col">
+        <form class="search" style="margin:auto;max-width:200px">
+            <input type="text" id="keyword-search" placeholder="Search for keyword..." />
+            <button type="submit" onclick="onKeywordSearch(event)"><i class="fa fa-search"></i></button>
+        </form>
+        <div id="word-cloud">test</div>
+    </div>
+
+
+    <!-- -------------------------- -->
+
+    function createWordCloud (keywordsArr) { for (let i = 0; i
+    < keywordsArr.length; i++ ){ var } } function placeWords() { for (var i=0 ; i < words.length; i +=1 ) { var word=c reateWordObject(words[i].word, words[i].freq); } // {ddd: 1, eee: 1, wwww:
+        5}ddd: 1eee: 1wwww: 5__proto__: Object <!-- --------------------- -->
+
+        <script>
+            /*  ======================= SETUP ======================= */
+            var config = {
+                    trace: true,
+                    spiralResolution: 1, //Lower = better resolution
+                    spiralLimit: 360 * 5,
+                    lineHeight: 0.8,
+                    xWordPadding: 0,
+                    yWordPadding: 3,
+                    font: "sans-serif"
                 }
-            })
-            // var words = ["words", "are", "cool", "and", "so", "are", "you", "inconstituent", "funhouse!", "apart", "from", "Steve", "fish"].map(function(word) {
-            //     return {
-            //         word: word,
-            //         freq: Math.floor(Math.random() * 50) + 10
-            //     }
-            // })
-
-        words.sort(function(a, b) {
-            return -1 * (a.freq - b.freq);
-        });
-
-        var cloud = document.getElementById("word-cloud");
-        cloud.style.position = "relative";
-        cloud.style.fontFamily = config.font;
-
-        var traceCanvas = document.createElement("canvas");
-        traceCanvas.width = cloud.offsetWidth;
-        traceCanvas.height = cloud.offsetHeight;
-        var traceCanvasCtx = traceCanvas.getContext("2d");
-        cloud.appendChild(traceCanvas);
-
-        var startPoint = {
-            x: cloud.offsetWidth / 2,
-            y: cloud.offsetHeight / 2
-        };
-
-        var wordsDown = [];
-        /* ======================= END SETUP ======================= */
-
-
-
-
-
-        /* =======================  PLACEMENT FUNCTIONS =======================  */
-        function createWordObject(word, freq) {
-            var wordContainer = document.createElement("div");
-            wordContainer.style.position = "absolute";
-            wordContainer.style.fontSize = freq + "px";
-            wordContainer.style.lineHeight = config.lineHeight;
-            /*    wordContainer.style.transform = "translateX(-50%) translateY(-50%)";*/
-            wordContainer.appendChild(document.createTextNode(word));
-
-            return wordContainer;
-        }
-
-        function placeWord(word, x, y) {
-
-            cloud.appendChild(word);
-            word.style.left = x - word.offsetWidth / 2 + "px";
-            word.style.top = y - word.offsetHeight / 2 + "px";
-
-            wordsDown.push(word.getBoundingClientRect());
-        }
-
-        function trace(x, y) {
-            //     traceCanvasCtx.lineTo(x, y);
-            //     traceCanvasCtx.stroke();
-            traceCanvasCtx.fillRect(x, y, 1, 1);
-        }
-
-        function spiral(i, callback) {
-            angle = config.spiralResolution * i;
-            x = (1 + angle) * Math.cos(angle);
-            y = (1 + angle) * Math.sin(angle);
-            return callback ? callback() : null;
-        }
-
-        function intersect(word, x, y) {
-            cloud.appendChild(word);
-
-            word.style.left = x - word.offsetWidth / 2 + "px";
-            word.style.top = y - word.offsetHeight / 2 + "px";
-
-            var currentWord = word.getBoundingClientRect();
-
-            cloud.removeChild(word);
-
-            for (var i = 0; i < wordsDown.length; i += 1) {
-                var comparisonWord = wordsDown[i];
-
-                if (!(currentWord.right + config.xWordPadding < comparisonWord.left - config.xWordPadding ||
-                        currentWord.left - config.xWordPadding > comparisonWord.right + config.wXordPadding ||
-                        currentWord.bottom + config.yWordPadding < comparisonWord.top - config.yWordPadding ||
-                        currentWord.top - config.yWordPadding > comparisonWord.bottom + config.yWordPadding)) {
-
-                    return true;
-                }
-            }
-
-            return false;
-        }
-        /* =======================  END PLACEMENT FUNCTIONS =======================  */
-
-
-
-
-
-        /* =======================  LETS GO! =======================  */
-        (function placeWords() {
-            for (var i = 0; i < words.length; i += 1) {
-
-                var word = createWordObject(words[i].word, words[i].freq);
-
-                for (var j = 0; j < config.spiralLimit; j++) {
-                    //If the spiral function returns true, we've placed the word down and can break from the j loop
-                    if (spiral(j, function() {
-                            if (!intersect(word, startPoint.x + x, startPoint.y + y)) {
-                                placeWord(word, startPoint.x + x, startPoint.y + y);
-                                return true;
-                            }
-                        })) {
-                        break;
+                //to be replaced by the array from the localStorage
+            var words = ["words", "funhouse!", "apart", "from", "Steve", "fish"].map(function(word) {
+                    return {
+                        word: word,
+                        freq: Math.floor(Math.random() * 50) + 10
                     }
-                }
+                })
+                // var words = ["words", "are", "cool", "and", "so", "are", "you", "inconstituent", "funhouse!", "apart", "from", "Steve", "fish"].map(function(word) {
+                //     return {
+                //         word: word,
+                //         freq: Math.floor(Math.random() * 50) + 10
+                //     }
+                // })
+
+            words.sort(function(a, b) {
+                return -1 * (a.freq - b.freq);
+            });
+
+            var cloud = document.getElementById("word-cloud");
+            cloud.style.position = "relative";
+            cloud.style.fontFamily = config.font;
+
+            var traceCanvas = document.createElement("canvas");
+            traceCanvas.width = cloud.offsetWidth;
+            traceCanvas.height = cloud.offsetHeight;
+            var traceCanvasCtx = traceCanvas.getContext("2d");
+            cloud.appendChild(traceCanvas);
+
+            var startPoint = {
+                x: cloud.offsetWidth / 2,
+                y: cloud.offsetHeight / 2
+            };
+
+            var wordsDown = [];
+            /* ======================= END SETUP ======================= */
+
+
+
+
+            /* =======================  PLACEMENT FUNCTIONS =======================  */
+            function createWordObject(word, freq) {
+                var wordContainer = document.createElement("div");
+                wordContainer.style.position = "absolute";
+                wordContainer.style.fontSize = freq + "px";
+                wordContainer.style.lineHeight = config.lineHeight;
+                wordContainer.style.transform = "translateX(-50%) translateY(-50%)";
+                wordContainer.appendChild(document.createTextNode(word));
+                console.log(wordContainer);
+
+                return wordContainer;
             }
-        })();
-        /* ======================= WHEW. THAT WAS FUN. We should do that again sometime ... ======================= */
 
+            function placeWord(word, x, y) {
 
+                cloud.appendChild(word);
+                word.style.left = x - word.offsetWidth / 2 + "px";
+                word.style.top = y - word.offsetHeight / 2 + "px";
 
-        /* =======================  Draw the placement spiral if trace lines is on ======================= */
-        (function traceSpiral() {
+                wordsDown.push(word.getBoundingClientRect());
+            }
 
-            traceCanvasCtx.beginPath();
+            function trace(x, y) {
+                traceCanvasCtx.lineTo(x, y);
+                traceCanvasCtx.fillRect(x, y, 1, 1);
+            }
 
-            if (config.trace) {
-                var frame = 1;
+            function spiral(i, callback) {
+                angle = config.spiralResolution * i;
+                x = (1 + angle) * Math.cos(angle);
+                y = (1 + angle) * Math.sin(angle);
+                return callback ? callback() : null;
+            }
 
-                function animate() {
-                    spiral(frame, function() {
-                        trace(startPoint.x + x, startPoint.y + y);
-                    });
+            function intersect(word, x, y) {
+                cloud.appendChild(word);
 
-                    frame += 1;
+                word.style.left = x - word.offsetWidth / 2 + "px";
+                word.style.top = y - word.offsetHeight / 2 + "px";
 
-                    if (frame < config.spiralLimit) {
-                        window.requestAnimationFrame(animate);
+                var currentWord = word.getBoundingClientRect();
+
+                cloud.removeChild(word);
+
+                for (var i = 0; i < wordsDown.length; i += 1) {
+                    var comparisonWord = wordsDown[i];
+
+                    if (!(currentWord.right + config.xWordPadding < comparisonWord.left - config.xWordPadding ||
+                            currentWord.left - config.xWordPadding > comparisonWord.right + config.wXordPadding ||
+                            currentWord.bottom + config.yWordPadding < comparisonWord.top - config.yWordPadding ||
+                            currentWord.top - config.yWordPadding > comparisonWord.bottom + config.yWordPadding)) {
+
+                        return true;
                     }
                 }
 
-                animate();
+                return false;
             }
-        })();
-    </script>
+            /* =======================  END PLACEMENT FUNCTIONS =======================  */
+
+
+            // var obj = {ddd: 1, eee: 1, wwww: 5}
+
+
+
+            /* =======================  LETS GO! =======================  */
+            (function placeWords() {
+                for (var i = 0; i < words.length; i += 1) {
+
+                    var word = createWordObject(words[i].word, words[i].freq);
+
+                    for (var j = 0; j < config.spiralLimit; j++) {
+                        //If the spiral function returns true, we've placed the word down and can break from the j loop
+                        if (spiral(j, function() {
+                                if (!intersect(word, startPoint.x + x, startPoint.y + y)) {
+                                    placeWord(word, startPoint.x + x, startPoint.y + y);
+                                    return true;
+                                }
+                            })) {
+                            break;
+                        }
+                    }
+                }
+            })();
+            /* ======================= WHEW. THAT WAS FUN. We should do that again sometime ... ======================= */
+
+
+
+            /* =======================  Draw the placement spiral if trace lines is on ======================= */
+            (function traceSpiral() {
+
+                traceCanvasCtx.beginPath();
+
+                if (config.trace) {
+                    var frame = 1;
+
+                    function animate() {
+                        spiral(frame, function() {
+                            trace(startPoint.x + x, startPoint.y + y);
+                        });
+
+                        frame += 1;
+
+                        if (frame < config.spiralLimit) {
+                            window.requestAnimationFrame(animate);
+                        }
+                    }
+
+                    animate();
+                }
+            })();
+        </script>
 </body>
 
 </html>
