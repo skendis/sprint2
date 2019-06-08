@@ -102,6 +102,20 @@ form.search::after {
 }
 
 
+/* still to be designed */
+
+#word-cloud {
+    height: 30vh;
+    width: 50vw;
+    /* height: 100px;
+    width: 200px; */
+    margin: 0 auto;
+    background-color: orange;
+    color: white;
+    font-size: 1rem
+}
+
+
 /* layout */
 
 .container {
