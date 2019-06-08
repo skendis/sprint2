@@ -20,18 +20,18 @@ var gImgs = [
 var gMeme = {
         selectedImgId: 3,
         txts: [{
-                line: 'I never eat McDonald\'s',
+                line: 'this is line 1',
                 size: 40,
                 align: 'center',
                 color: 'white',
-                font: 'impact'
+                font: 'Impact'
             },
             {
-                line: 'I never eat McDonald\'s again',
+                line: 'this is line 2',
                 size: 40,
                 align: 'center',
                 color: 'white',
-                font: 'impact'
+                font: 'Impact'
             }
         ]
     }
@@ -63,6 +63,10 @@ function changeText(str, idx) {
     gMeme.txts[idx].line = str;
 }
 
+
+function changeFont(font,idx){
+    gMeme.txts[idx].font = `${font}`;
+}
 function changeTextColor(color, idx) {
     gMeme.txts[idx].color = `#${color}`;
 }
@@ -71,8 +75,11 @@ function changeTextAlign(align, idx) {
     gMeme.txts[idx].align = align;
 }
 
-function changeTextSize(size, idx) {
-    gMeme.txts[idx].size = size;
+function increaseTextSize(size, idx) {
+    gMeme.txts[idx].size += size;
+}
+function decreaseTextSize(size, idx) {
+    gMeme.txts[idx].size -= size;
 }
 
 function deleteLine(idx) {

@@ -40,11 +40,26 @@ function onChangeText(line, text) {
     renderCanvas();
 }
 
-function onChangeColor(line,value){
-    changeTextColor(value,line);
+function onChangeColor(line, value) {
+    changeTextColor(value, line);
     renderCanvas();
 }
-
+function onIncreaseText(lineIdx) {
+    increaseTextSize(1, lineIdx)
+    renderCanvas();
+}
+function onDecreaseText(lineIdx) {
+    decreaseTextSize(1, lineIdx)
+    renderCanvas();
+}
+function onChangeAlign(align, lineIdx) {
+    changeTextAlign(align, lineIdx);
+    renderCanvas();
+}
+function onFontChange(line, font) {
+    changeFont(font, line);
+    renderCanvas();
+}
 
 
 

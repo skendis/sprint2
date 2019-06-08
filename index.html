@@ -32,62 +32,79 @@
         <div class="flex direction-column space-betweeen">
             <!-- CONTROL START -->
             <div class="controls">
-                <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
-                    onkeyup="onChangeText(0,this.value)">
-                <div class="flex justify-center">
-                    <div class="color-picker-container">
-                        <i class="fas fa-paint-brush"></i>
-                        <input class="jscolor" onchange="onChangeColor(0,this.value)">
-                    </div>
-                    <div class="font-picker-container">
-                        <i class="fas fa-font"></i>
-                        <select name="fontColor" id="fontColor">
-                            <option value="impact">impact</option>
-                            <option value="lato">lato</option>
-                            <option value="arial">arial</option>
-                        </select>
-                    </div>
+                <div class="line-editor flex space-around">
+                    <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
+                        onkeyup="onChangeText(0,this.value)">
+                    <button class="editor-ui disabled"><i class="fas fa-sliders-h"></i></button>
                 </div>
-                <div class="flex flex-wrap justify-center">
-                    <button class="editor-ui"><i class="fas fa-arrow-up"></i></button>
-                    <button class="editor-ui"><i class="fas fa-arrow-down"></i></button>
-                    <button class="editor-ui"><i class="fas fa-plus"></i></button>
-                    <button class="editor-ui"><i class="fas fa-minus"></i></button>
-                    <button class="editor-ui"><i class="fas fa-align-center"></i></button>
-                    <button class="editor-ui"><i class="fas fa-align-right"></i></button>
-                    <button class="editor-ui"><i class="fas fa-align-left"></i></button>
+                <div class="">
+                    <div class="flex justify-center">
+                        <div class="color-picker-container">
+                            <i class="fas fa-paint-brush"></i>
+                            <input class="jscolor" onchange="onChangeColor(0,this.value)">
+                        </div>
+                        <div class="font-picker-container">
+                            <i class="fas fa-font"></i>
+                            <select name="fontFace" id="fontFace" onchange="onFontChange(0,this.value)">
+                                <option value="Impact">Impact</option>
+                                <option value="lato-regular">Lato</option>
+                                <option value="arial">Arial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap space-around">
+                        <button class="editor-ui disabled"><i class="fas fa-arrow-up"></i></button>
+                        <button class="editor-ui disabled"><i class="fas fa-arrow-down"></i></button>
+                        <button class="editor-ui" onclick="onIncreaseText(0)"><i class="fas fa-plus"></i></button>
+                        <button class="editor-ui" onclick="onDecreaseText(0)"><i class="fas fa-minus"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('center',0)"><i
+                                class="fas fa-align-center"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('right',0)"><i
+                                class="fas fa-align-left"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('left',0)"><i
+                                class="fas fa-align-right"></i></button>
+                    </div>
                 </div>
             </div>
             <!-- CONTROL END -->
             <!-- CONTROL START -->
             <div class="controls">
-                <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
-                    onkeyup="onChangeText(1,this.value)">
-                <div class="flex justify-center">
-                    <div class="color-picker-container">
-                        <i class="fas fa-paint-brush"></i>
-                        <input class="jscolor" onchange="onChangeColor(1,this.value)">
-                    </div>
-                    <div class="font-picker-container">
-                        <i class="fas fa-font"></i>
-                        <select name="fontColor" id="fontColor">
-                            <option value="impact">impact</option>
-                            <option value="lato">lato</option>
-                            <option value="arial">arial</option>
-                        </select>
-                    </div>
+                <div class="line-editor flex space-around">
+                    <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
+                        onkeyup="onChangeText(1,this.value)">
+                    <button class="editor-ui disabled"><i class="fas fa-sliders-h"></i></button>
                 </div>
-                <div class="flex flex-wrap justify-center">
-                    <button class="editor-ui"><i class="fas fa-arrow-up"></i></button>
-                    <button class="editor-ui"><i class="fas fa-arrow-down"></i></button>
-                    <button class="editor-ui"><i class="fas fa-plus"></i></button>
-                    <button class="editor-ui"><i class="fas fa-minus"></i></button>
-                    <button class="editor-ui"><i class="fas fa-align-center"></i></button>
-                    <button class="editor-ui"><i class="fas fa-align-right"></i></button>
-                    <button class="editor-ui"><i class="fas fa-align-left"></i></button>
+                <div class="">
+                    <div class="flex justify-center">
+                        <div class="color-picker-container">
+                            <i class="fas fa-paint-brush"></i>
+                            <input class="jscolor" onchange="onChangeColor(1,this.value)">
+                        </div>
+                        <div class="font-picker-container">
+                            <i class="fas fa-font"></i>
+                            <select name="fontFace" id="fontFace" onchange="onFontChange(1,this.value)">
+                                <option value="Impact">Impact</option>
+                                <option value="lato-regular">Lato</option>
+                                <option value="arial">Arial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap space-around">
+                        <button class="editor-ui disabled"><i class="fas fa-arrow-up"></i></button>
+                        <button class="editor-ui disabled"><i class="fas fa-arrow-down"></i></button>
+                        <button class="editor-ui" onclick="onIncreaseText(1)"><i class="fas fa-plus"></i></button>
+                        <button class="editor-ui" onclick="onDecreaseText(1)"><i class="fas fa-minus"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('center',1)"><i
+                                class="fas fa-align-center"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('right',1)"><i
+                                class="fas fa-align-left"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('left',1)"><i
+                                class="fas fa-align-right"></i></button>
+                    </div>
                 </div>
             </div>
             <!-- CONTROL END -->
+
         </div>
     </section>
     <section class="gallery container flex justify-center">

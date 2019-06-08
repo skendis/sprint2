@@ -138,15 +138,17 @@ header a:hover {
 }
 
 /* editor */
-.editor{
+
+.editor {
     border: 1px solid black;
     padding: 100px;
 }
+
 .controls {
     color: white;
     background-color: #323232;
-    max-width: 220px;
-    padding: 5px;
+    max-width: 290px;
+    padding: 10px;
     margin-left: 10px;
     margin-right: 10px
 }
@@ -156,13 +158,19 @@ header a:hover {
     color: black;
     border: none;
     height: 30px;
+    padding: 8px;
 }
 
 .editor-ui {
     color: white;
     background-color: #323232;
+    border: none;
     width: 30px;
     height: 30px;
+}
+
+.editor-ui:hover {
+    color: #2eb398;
 }
 
 .font-picker-container {
@@ -178,6 +186,14 @@ header a:hover {
     height: 30px;
 }
 
+#fontFace {
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #2eb398;
+    border: none;
+    height: 30px;
+}
+
 .color-picker-container {
     background-color: #323232;
     padding: 5px;
@@ -186,10 +202,9 @@ header a:hover {
 .jscolor {
     width: 100px;
     height: 30px;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: white;
 }
-.canvas-container{
+
+.canvas-container {
     border: 2px solid #2eb398;
 }
 
@@ -222,9 +237,10 @@ header a:hover {
     justify-content: space-around;
 }
 
-.row-reverse{
+.row-reverse {
     flex-direction: row-reverse;
 }
+
 .align-center {
     align-items: center;
 }
@@ -243,4 +259,12 @@ header a:hover {
 
 .full-width {
     width: 80%;
+}
+
+.display-none {
+    display: none;
+}
+
+.disabled {
+    visibility: hidden;
 }
