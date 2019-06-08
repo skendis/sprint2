@@ -10,7 +10,6 @@ function renderCanvas() {
     canvas = document.querySelector('#meme-canvas');
     ctx = canvas.getContext('2d')
     var myImg = new Image();
-
     myImg.onload = function () {
         canvas.width = myImg.width;
         canvas.height = myImg.height
