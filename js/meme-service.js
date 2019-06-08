@@ -21,14 +21,14 @@ var gMeme = {
         selectedImgId: 3,
         txts: [{
                 line: 'I never eat McDonald\'s',
-                size: 1.8,
+                size: 40,
                 align: 'center',
                 color: 'white',
                 font: 'impact'
             },
             {
                 line: 'I never eat McDonald\'s again',
-                size: 1.4,
+                size: 40,
                 align: 'center',
                 color: 'white',
                 font: 'impact'
@@ -64,7 +64,7 @@ function changeText(str, idx) {
 }
 
 function changeTextColor(color, idx) {
-    gMeme.txts[idx].color = color;
+    gMeme.txts[idx].color = `#${color}`;
 }
 
 function changeTextAlign(align, idx) {
