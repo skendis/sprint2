@@ -53,16 +53,16 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap space-around">
-                        <button class="editor-ui disabled"><i class="fas fa-arrow-up"></i></button>
-                        <button class="editor-ui disabled"><i class="fas fa-arrow-down"></i></button>
+                        <button class="editor-ui" onclick="onUpText(0)"><i class="fas fa-arrow-up"></i></button>
+                        <button class="editor-ui" onclick="onDownText(0)"><i class="fas fa-arrow-down"></i></button>
                         <button class="editor-ui" onclick="onIncreaseText(0)"><i class="fas fa-plus"></i></button>
                         <button class="editor-ui" onclick="onDecreaseText(0)"><i class="fas fa-minus"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('left',0)"><i
+                                class="fas fa-align-left"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('right',0)"><i
+                                class="fas fa-align-right"></i></button>
                         <button class="editor-ui" onclick="onChangeAlign('center',0)"><i
                                 class="fas fa-align-center"></i></button>
-                        <button class="editor-ui" onclick="onChangeAlign('right',0)"><i
-                                class="fas fa-align-left"></i></button>
-                        <button class="editor-ui" onclick="onChangeAlign('left',0)"><i
-                                class="fas fa-align-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -90,21 +90,20 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap space-around">
-                        <button class="editor-ui disabled"><i class="fas fa-arrow-up"></i></button>
-                        <button class="editor-ui disabled"><i class="fas fa-arrow-down"></i></button>
+                        <button class="editor-ui" onclick="onUpText(1)"><i class="fas fa-arrow-up"></i></button>
+                        <button class="editor-ui" onclick="onDownText(1)"><i class="fas fa-arrow-down"></i></button>
                         <button class="editor-ui" onclick="onIncreaseText(1)"><i class="fas fa-plus"></i></button>
                         <button class="editor-ui" onclick="onDecreaseText(1)"><i class="fas fa-minus"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('left',1)"><i
+                                class="fas fa-align-left"></i></button>
+                        <button class="editor-ui" onclick="onChangeAlign('right',1)"><i
+                                class="fas fa-align-right"></i></button>
                         <button class="editor-ui" onclick="onChangeAlign('center',1)"><i
                                 class="fas fa-align-center"></i></button>
-                        <button class="editor-ui" onclick="onChangeAlign('right',1)"><i
-                                class="fas fa-align-left"></i></button>
-                        <button class="editor-ui" onclick="onChangeAlign('left',1)"><i
-                                class="fas fa-align-right"></i></button>
                     </div>
                 </div>
             </div>
             <!-- CONTROL END -->
-
         </div>
     </section>
     <section class="gallery container flex justify-center">
