@@ -15,7 +15,6 @@
     src: url('../fonts/impact/impact.ttf');
 }
 
-
 /* Base */
 
 * {
@@ -34,18 +33,17 @@ body {
     margin: 0;
 }
 
-ul,
-li {
+ul, li {
     padding: 0;
     margin: 0;
 }
-
 
 /* Header */
 
 header {
     background-color: #323232;
     height: 4.75rem;
+
 }
 
 header a {
@@ -59,7 +57,6 @@ header a:hover {
     color: #2eb398;
     text-decoration-line: underline;
 }
-
 
 /* Logo */
 
@@ -86,8 +83,7 @@ header a:hover {
     margin: 86.60px 0;
 }
 
-.hexagon:before,
-.hexagon:after {
+.hexagon:before, .hexagon:after {
     content: "";
     position: absolute;
     width: 0;
@@ -108,8 +104,7 @@ header a:hover {
     margin: 28.87px 0;
 }
 
-.hexagon:before,
-.hexagon:after {
+.hexagon:before, .hexagon:after {
     content: "";
     position: absolute;
     width: 0;
@@ -128,7 +123,6 @@ header a:hover {
     border-top: 28.87px solid #323232;
 }
 
-
 /* Gallery */
 
 .gallery {
@@ -144,78 +138,81 @@ header a:hover {
     border-radius: 15px;
 }
 
-
 /* editor */
+.editor{
 
-.editor {
-    border: 1px solid black;
-    padding: 100px;
-}
-
-.controls {
-    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: #323232;
-    max-width: 290px;
+
+}
+.editor-controls{
+    background-color: #323232;
+}
+.dialog-buttons{
+    padding: 20px;
+}
+.editor-menu{
+    flex-grow: 0;
+    max-width: 320px;
+    justify-content: space-between;
+    background-color: #323232;
+    padding: 20px;
+}
+.editor-btn {
+    background-color: #323232;
+    color: white;
     padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .3s;
+    flex-grow: 1;
 }
 
-.line-input {
-    width: 210px;
+.editor-btn:hover {
+    background-color: #2eb398;
     color: black;
-    border: none;
-    height: 30px;
-    padding: 8px;
 }
 
-.editor-ui {
+.editor-btn>i {
+    margin: 0;
+    padding: 0;
+}
+
+.color-picker {
+    background-color: #323232;
     color: white;
+    flex-grow: 1;
+    padding: 10px;
+
+}
+
+.font-picker {
     background-color: #323232;
-    border: none;
-    width: 30px;
-    height: 30px;
-}
-
-.editor-ui:hover {
-    color: #2eb398;
-}
-
-.font-picker-container {
-    background-color: #323232;
-    padding: 5px;
-}
-
-#fontColor {
-    width: 100px;
-    background-color: rgba(0, 0, 0, 0.0);
     color: white;
-    border: none;
-    height: 30px;
+    flex-grow: 1;
+    padding: 10px;
 }
 
-#fontFace {
-    width: 100px;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: #2eb398;
-    border: none;
-    height: 30px;
-}
-
-.color-picker-container {
+.line-text-input {
     background-color: #323232;
-    padding: 5px;
-}
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-grow: grow;
+    justify-content: space-between;
+    flex-grow: 1;
 
-.jscolor {
-    width: 100px;
-    height: 30px;
 }
-
-.canvas-container {
-    border: 2px solid #2eb398;
+.line-text-input>input[type="text"]{
+    width: 100%;
 }
-
+.color-picker>select{
+    margin-left:10px; 
+}
+.download-btn{
+    border:1px solid white;
+}
 
 /* Layout */
 
@@ -223,7 +220,6 @@ header a:hover {
     padding-left: 6.25px;
     padding-right: 6.25px;
 }
-
 
 /* Helpers */
 
@@ -278,6 +274,7 @@ header a:hover {
 .disabled {
     visibility: hidden;
 }
-.display-none{
+
+.display-none {
     display: none;
 }
