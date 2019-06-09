@@ -24,7 +24,7 @@
             </ul>
         </nav>
     </header>
-    <section class="editor container flex flex-wrap justify-center">
+    <section class="editor container flex flex-wrap justify-center display-none">
 
         <div class="canvas-container">
             <canvas id="meme-canvas" width="300" height="300"></canvas>
@@ -71,7 +71,7 @@
                     <i class="fas fa-paint-brush"></i>
                     <input class="jscolor" onchange="onChangeColor(1,this.value)">
                 </div>
-                <div class="font-picker flex align-center">
+                <div class="font-picker flex align-center space-between">
                     <i class="fas fa-font"></i>
                     <select onchange="onFontChange(1,this.value)">
                         <option value="Impact">Impact</option>
@@ -91,29 +91,24 @@
             </div>
             <!-- CONTROL END -->
 
-            <div class="dialog-buttons">
+            <div class="dialog-buttons flex justify-center">
                 <a class="editor-btn flex justify-center" href="#" onclick="saveImg(this)" download="">Download</a>
-                <a class="editor-btn flex justify-center" href="#" ><i class="fas fa-times"></i></a>
+                <button class="editor-btn flex justify-center" onclick="closeEditor()">close editor</i></button>
             </div>
         </div>
 
     </section>
-    <section class=" gallery container flex justify-center">
-        <div class="flex justify-center flex-wrap">
-            <img src="images/00.jpg" onclick="changeImg(1)">
-            <img src="images/01.jpg" onclick="changeImg(2)">
-            <img src="images/02.jpg" onclick="changeImg(3)">
-            <img src="images/03.jpg" onclick="changeImg(4)">
-            <img src="images/04.jpg" onclick="changeImg(5)">
-        </div>
+    <section class="gallery container flex flex-wrap justify-center">
     </section>
 
-
-    <!-- <script src="lib/jquery/jquery-3.4.1.min.js"></script> -->
-    <script src="js/jscolor.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="lib/jscolor-2.0.5/jscolor.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/util-service.js"></script>
     <script src="js/canvas-controller.js"></script>
+    <script src="js/editor-controller.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
