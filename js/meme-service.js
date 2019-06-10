@@ -18,22 +18,24 @@ var gImgs = [
 ];
 var gMeme = {
     selectedImgId: 3,
-    txts: [{
-        line: 'this is line 1',
-        size: 40,
-        align: 'center',
-        color: 'white',
-        font: 'Impact',
-        yPos: 0.2
-    },
-    {
-        line: 'this is line 2',
-        size: 40,
-        align: 'center',
-        color: 'white',
-        font: 'Impact',
-        yPos: 0.9
-    }
+    txts: [
+        {
+            line: 'new line',
+            size: 40,
+            align: 'center',
+            color: 'white',
+            font: 'Impact',
+            yPos: 0.2
+        },
+        {
+            line: 'new line',
+            size: 40,
+            align: 'center',
+            color: 'white',
+            font: 'Impact',
+            yPos: 0.9
+        },
+
     ]
 }
 //get image by id 
@@ -44,16 +46,42 @@ function returnImageByIdx(imageIdx) {
 function getImgsForDisplay(keyword = null) {
     return gImgs
 }
-function addLine(newLine) {
-    const line = {
-        line: '',
-        size: 40,
-        align: 'center',
-        color: 'white',
-        font: 'Impact',
-        yPos: 0.5
+function addLine() {
+    let line;
+    switch (gMeme.txts.length) {
+        case 0:
+            line = {
+                line: 'new line',
+                size: 40,
+                align: 'center',
+                color: 'white',
+                font: 'Impact',
+                yPos: 0.2
+            }
+            break;
+        case 1:
+            line = {
+                line: 'new line',
+                size: 40,
+                align: 'center',
+                color: 'white',
+                font: 'Impact',
+                yPos: 0.9
+            }
+            break;
+        default:
+            line = {
+                line: 'new line',
+                size: 40,
+                align: 'center',
+                color: 'white',
+                font: 'Impact',
+                yPos: 0.5
+            }
+            break;
     }
-    gMeme.push(line);
+    gMeme.txts.push(line);
+    console.log(gMeme.txts.length);
 }
 function changeText(str, idx) {
     gMeme.txts[idx].line = str;

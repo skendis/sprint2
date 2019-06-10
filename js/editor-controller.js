@@ -5,13 +5,16 @@ function renderControls() {
 
     const lines = getLines();
     let idx = 0;
+    const length = lines.length;
     let strHtmls = lines.map(function (line) {
         return `<!-- CONTROL START -->
                 <div class="editor-menu">
                     <div class="line-text-input">
-                        <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
+                        <input type="text" name="line-input" id="" value="${line.line}" class="line-input"
                             onkeyup="onChangeText(${idx},this.value)">
                         <button class="editor-btn" onclick="openEditBox(${idx})"><i class="fas fa-sliders-h"></i></button>
+                        ${idx===length-1?`<button class="editor-btn" onclick="onAddText()"><i class="fas fa-plus"></i></button>`:``}
+                        ${idx===0?``:`<button class="editor-btn" onclick="onRemoveText(${idx})"><i class="fas fa-minus"></i></button>`}
                     </div>
                     <div id="editbox-${idx}" class="edit-box flex flex-wrap display-none">
                         <div class="color-picker flex align-center">
@@ -28,8 +31,8 @@ function renderControls() {
                         </div>
                         <button class="editor-btn" onclick="onUpText(${idx})"><i class="fas fa-arrow-up"></i></button>
                         <button class="editor-btn" onclick="onDownText(${idx})"><i class="fas fa-arrow-down"></i></button>
-                        <button class="editor-btn" onclick="onIncreaseText(${idx})"><i class="fas fa-plus"></i></button>
-                        <button class="editor-btn" onclick="onDecreaseText(${idx})"><i class="fas fa-minus"></i></button>
+                        <button class="editor-btn" onclick="onIncreaseText(${idx})">A+</button>
+                        <button class="editor-btn" onclick="onDecreaseText(${idx})">A-</i></button>
                         <button class="editor-btn" onclick="onChangeAlign('left',${idx})"><i class="fas fa-align-left"></i></button>
                         <button class="editor-btn" onclick="onChangeAlign('center',${idx})"><i
                                 class="fas fa-align-center"></i></button>
@@ -52,6 +55,16 @@ function renderControls() {
     jscolor.installByClassName('jscolor');
 }
 
+function onAddText(){
+    addLine();
+    renderControls();
+    renderCanvas();
+}
+function onRemoveText(id){
+    deleteLine(id);
+    renderControls();
+    renderCanvas();
+}
 function openEditBox(id){
     $(`#editbox-${id}`).toggle('display-none');
 }
