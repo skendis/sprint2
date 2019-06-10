@@ -135,8 +135,8 @@ header a:hover {
 }
 
 .gallery img {
-    max-width: 6.25rem;
-    height: 6.25rem;
+    max-width: 6.125rem;
+    height: 6.125rem;
     object-fit: cover;
     margin: 0.3125rem;
     border-radius: 15px;
@@ -290,10 +290,10 @@ header a:hover {
 }
 
 /* Search */
-.search{
+
+.search {
     padding: 3.125rem 0 0;
 }
-
 
 .words-cloud .keyword {
     cursor: pointer;
@@ -301,12 +301,47 @@ header a:hover {
     text-transform: uppercase;
 }
 
+/* Social */
+
+.social-bar a {
+    background-color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #2eb398;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.social-bar .facebook:hover {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.social-bar .instagram:hover {
+    background-color: #ea4c89;
+    color: #fff;
+}
+
+.social-bar .linkedin:hover {
+    background-color: #0e76a8;
+    color: #fff;
+}
+
+/* Footer */
+
+footer {
+    background-color: #323232;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 /* Layout */
 
-.container {
-    /* padding-left: 6.25rem; */
-    /* padding-right: 6.25rem; */
-}
 
 /* Helpers */
 
@@ -332,6 +367,10 @@ header a:hover {
 
 .row-reverse {
     flex-direction: row-reverse;
+}
+
+.justify-right {
+    justify-content: right;
 }
 
 .align-center {
@@ -364,4 +403,64 @@ header a:hover {
 
 .display-none {
     display: none;
+}
+
+/* Responsive */
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: red;
+    }
+    .gallery img {
+        max-width: 9.125rem;
+        height: 9.125rem;
+    }
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    .about {
+        flex-wrap: wrap;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: blue;
+    }
+    .gallery img {
+        max-width: 15.125rem;
+        height: 15.125rem;
+    }
+    .container {
+        padding-left: 7.25rem;
+        padding-right: 7.25rem;
+    }
+    .about {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1000px) {
+    body {
+        background-color: white;
+    }
+    .gallery img {
+        max-width: 10.125rem;
+        height: 10.125rem;
+    }
+    .container {
+        padding-left: 7.25rem;
+        padding-right: 7.25rem;
+    }
+    .about{
+        flex-wrap: nowrap;
+    }
 }

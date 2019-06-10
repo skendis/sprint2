@@ -3,6 +3,9 @@
 var gKeywords = {
     'happy': 12,
     'funny': 4,
+    'cat': 3,
+    'dog': 6,
+    'person':15
 }
 var gImgs = [
     { id: 1, url: 'images/img1.jpg', keywords: ['happy'] },
@@ -17,6 +20,10 @@ var gImgs = [
     { id: 10, url: 'images/img10.jpg', keywords: ['happy'] },
     { id: 11, url: 'images/img11.jpg', keywords: ['happy'] },
     { id: 12, url: 'images/img12.jpg', keywords: ['funny', 'happy'] },
+    { id: 13, url: 'images/img13.jpg', keywords: ['funny', 'happy'] },
+    { id: 14, url: 'images/img14.jpg', keywords: ['funny', 'happy'] },
+    { id: 15, url: 'images/img15.jpg', keywords: ['funny', 'happy'] },
+    { id: 16, url: 'images/img16.jpg', keywords: ['funny', 'happy'] },
 
 ];
 var gMeme = {
