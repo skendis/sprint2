@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Meme generator</title>
 </head>
+
 <body onload="init()">
     <header class="flex container justify-center align-center">
         <div class="hexagon flex justify-center align-center">
             <div class="logo"></div>
         </div>
         <nav class="main-nav full-width">
-            <ul class="nav-bar clean-list flex justify-center align-center space-between disabled">
+            <ul class="nav-bar clean-list flex justify-center align-center space-between">
                 <li><a href="">portfolio</a></li>
                 <li><a href="">about</a></li>
                 <li><a href="">blog</a></li>
@@ -23,19 +24,33 @@
             </ul>
         </nav>
     </header>
+    <!-- Editor section -->
     <section class="editor container flex flex-wrap justify-center display-none">
-
         <div class="canvas-container">
             <canvas id="meme-canvas" width="300" height="300"></canvas>
         </div>
         <div class="editor-controls">
-
         </div>
-
     </section>
+    <input type="text" name="" id="search" placeholder="search" onkeyup="renderImages(this.value)">
+    <!-- Gallery section -->
     <section class="gallery container flex flex-wrap justify-center">
     </section>
-
+    <!-- About section -->
+    <section class="about flex container">
+        <div class='about-img'>
+            <img src="images/img12.jpg" alt="" srcset="">
+        </div>
+        <div class="about-content">
+            <h2>title</h2>
+            <h3>desctiptio</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit esse distinctio minus expedita sit
+                iusto cupiditate saepe, aut soluta! Recusandae, non? Cupiditate obcaecati voluptates quos quisquam
+                minima molestiae aut inventore.
+            </p>
+            
+        </div>
+    </section>
     <script src="lib/jscolor-2.0.5/jscolor.js"></script>
     <script src="lib/jquery/jquery-3.4.1.min.js"></script>
     <script src="js/meme-service.js"></script>
@@ -43,6 +58,7 @@
     <script src="js/canvas-controller.js"></script>
     <script src="js/editor-controller.js"></script>
     <script src="js/gallery-controller.js"></script>
+    <script src="js/upload-image.js"></script>
     <script src="js/main.js"></script>
 </body>
 

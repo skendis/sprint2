@@ -13,11 +13,12 @@ var gImgs = [
     { id: 9, url: 'images/img9.jpg', keywords: ['happy'] },
     { id: 10, url: 'images/img10.jpg', keywords: ['happy'] },
     { id: 11, url: 'images/img11.jpg', keywords: ['happy'] },
-    { id: 12, url: 'images/img12.jpg', keywords: ['funny puk', 'happy'] },
+    { id: 12, url: 'images/img12.jpg', keywords: ['funny', 'happy'] },
 
 ];
 var gMeme = {
-    selectedImgId: 3,
+    selectedImgId:0,
+    selectedImgData:null,
     txts: [
         {
             line: 'new line',
@@ -42,10 +43,14 @@ var gMeme = {
 function returnImageByIdx(imageIdx) {
     return gImgs.find((img) => { return img.id === imageIdx });
 }
-//get all imgs or filterd imgs
-function getImgsForDisplay(keyword = null) {
-    return gImgs
-}
+
+function getImagesForDisplay(keyword = null) {
+    if (keyword === null) return gImgs;
+    return gImgs.filter((image) => {
+        return image.keywords.includes(keyword);
+    })
+ }
+
 function addLine() {
     let line;
     switch (gMeme.txts.length) {

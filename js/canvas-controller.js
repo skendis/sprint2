@@ -2,7 +2,6 @@
 let canvas;
 let ctx;
 
-
 function renderCanvas() {
     canvas = document.querySelector('#meme-canvas');
     ctx = canvas.getContext('2d')
