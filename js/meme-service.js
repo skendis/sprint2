@@ -13,12 +13,12 @@ var gImgs = [
     { id: 9, url: 'images/img9.jpg', keywords: ['happy'] },
     { id: 10, url: 'images/img10.jpg', keywords: ['happy'] },
     { id: 11, url: 'images/img11.jpg', keywords: ['happy'] },
-    { id: 12, url: 'images/img12.jpg', keywords: ['funny', 'happy'] },
+    { id: 27, url: 'images/img27.jpg', keywords: ['funny', 'happy'] },
 
 ];
 var gMeme = {
-    selectedImgId:0,
-    selectedImgData:null,
+    selectedImgId: 0,
+    selectedImgData: null,
     txts: [
         {
             line: 'new line',
@@ -47,9 +47,10 @@ function returnImageByIdx(imageIdx) {
 function getImagesForDisplay(keyword = null) {
     if (keyword === null) return gImgs;
     return gImgs.filter((image) => {
-        return image.keywords.includes(keyword);
+        let lcKeyword = keyword.toLowerCase()
+        return image.keywords.includes(lcKeyword);
     })
- }
+}
 
 function addLine() {
     let line;

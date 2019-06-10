@@ -15,6 +15,11 @@
     src: url('../fonts/impact/impact.ttf');
 }
 
+@font-face {
+    font-family: "Maven-regular";
+    src: url('../fonts/Maven_Pro/MavenPro-Regular.ttf');
+}
+
 /* Base */
 
 * {
@@ -43,7 +48,6 @@ ul, li {
 header {
     background-color: #323232;
     height: 4.75rem;
-
 }
 
 header a {
@@ -139,30 +143,34 @@ header a:hover {
 }
 
 /* editor */
-.editor{
 
+.editor {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: #323232;
-
 }
-.editor-controls{
+
+.editor-controls {
     background-color: #323232;
 }
-.dialog-buttons{
+
+.dialog-buttons {
     padding: 20px;
 }
-.editor-menu{
+
+.editor-menu {
     flex-grow: 0;
     max-width: 320px;
     justify-content: space-between;
     background-color: #323232;
     padding: 20px;
 }
-.edit-box{
+
+.edit-box {
     flex-grow: 0;
     max-width: 320px;
 }
+
 .editor-btn {
     background-color: #323232;
     color: white;
@@ -190,7 +198,6 @@ header a:hover {
     color: white;
     flex-grow: 1;
     padding: 10px;
-
 }
 
 .font-picker {
@@ -209,32 +216,80 @@ header a:hover {
     justify-content: space-between;
     flex-grow: 1;
 }
-.line-text-input>input[type=text]{
+
+.line-text-input>input[type=text] {
     border-radius: 5px;
-    padding-left:5px;
+    padding-left: 5px;
 }
-.line-text-input>input[type="text"]{
+
+.line-text-input>input[type="text"] {
     width: 100%;
 }
-.font-picker>select{
-    background-color: rgba(0,0,0,0.0);
+
+.font-picker>select {
+    background-color: rgba(0, 0, 0, 0.0);
     color: #2eb398;
     border: none;
 }
-.jscolor{
+
+.jscolor {
     margin-left: 12px;
     border-radius: 4px;
     height: 30px;
 }
-.download-btn{
-    border:1px solid white;
+
+.download-btn {
+    border: 1px solid white;
+}
+
+/* About */
+
+.about {
+    background-color: #2eb398;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 68px;
+    padding-bottom: 68px;
+}
+
+.about-title {
+    font-family: 'Maven-regular', sans-serif;
+    text-transform: capitalize;
+    font-size: 1.875rem;
+    line-height: 0.17;
+    color: #fff;
+}
+
+.about-description {
+    color: #20816d;
+    font-family: 'Maven-regular', sans-serif;
+}
+
+.about-paragraph {
+    color: #fff;
+    font-family: 'Lato-regular', sans-serif;
+    line-height: 1.83;
+    font-size: 12px;
+}
+
+.about-img {
+    padding-left: 19px;
+    padding-right: 19px;
+}
+
+.about-img img {
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    
 }
 
 /* Layout */
 
 .container {
-    padding-left: 6.25px;
-    padding-right: 6.25px;
+    padding-left: 6.25rem;
+    padding-right: 6.25rem;
 }
 
 /* Helpers */

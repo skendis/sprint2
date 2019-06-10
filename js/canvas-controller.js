@@ -7,8 +7,12 @@ function renderCanvas() {
     ctx = canvas.getContext('2d')
     var myImg = new Image();
     myImg.onload = function () {
-        canvas.width = 370;
-        canvas.height = 340;
+        
+        const ratio = Math.abs(myImg.width/myImg.height);
+        
+        var elCanvasContainer = $('.canvas-container');
+        canvas.width = elCanvasContainer.width();
+        canvas.height = canvas.width/ratio;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(myImg, 0, 0, canvas.width, canvas.height)
         ctx.shadowOffsetX = 2;
