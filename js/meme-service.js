@@ -3,29 +3,23 @@
 var gKeywords = {
     'happy': 12,
     'funny': 4,
-    'cat': 3,
-    'dog': 6,
-    'person':15
+    'fingers': 3,
+    'cat':20
 }
 var gImgs = [
     { id: 1, url: 'images/img1.jpg', keywords: ['happy'] },
     { id: 2, url: 'images/img2.jpg', keywords: ['happy'] },
-    { id: 3, url: 'images/img3.jpg', keywords: ['happy'] },
-    { id: 4, url: 'images/img4.jpg', keywords: ['happy'] },
-    { id: 5, url: 'images/img5.jpg', keywords: ['happy'] },
-    { id: 6, url: 'images/img6.jpg', keywords: ['happy'] },
+    { id: 3, url: 'images/img3.jpg', keywords: ['happy', 'cat'] },
+    { id: 4, url: 'images/img4.jpg', keywords: ['happy', 'funny'] },
+    { id: 5, url: 'images/img5.jpg', keywords: ['happy', 'funny'] },
+    { id: 6, url: 'images/img6.jpg', keywords: ['fingers'] },
     { id: 7, url: 'images/img7.jpg', keywords: ['happy'] },
     { id: 8, url: 'images/img8.jpg', keywords: ['happy'] },
-    { id: 9, url: 'images/img9.jpg', keywords: ['happy'] },
-    { id: 10, url: 'images/img10.jpg', keywords: ['happy'] },
+    { id: 9, url: 'images/img9.jpg', keywords: ['happy', 'funny'] },
+    { id: 10, url: 'images/img10.jpg', keywords: ['fingers', 'funny'] },
     { id: 11, url: 'images/img11.jpg', keywords: ['happy'] },
-    { id: 12, url: 'images/img12.jpg', keywords: ['funny', 'happy'] },
-    { id: 13, url: 'images/img13.jpg', keywords: ['funny', 'happy'] },
-    { id: 14, url: 'images/img14.jpg', keywords: ['funny', 'happy'] },
-    { id: 15, url: 'images/img15.jpg', keywords: ['funny', 'happy'] },
-    { id: 16, url: 'images/img16.jpg', keywords: ['funny', 'happy'] },
-
-];
+    { id: 12, url: 'images/img12.jpg', keywords: ['fingers'] },
+ ];
 var gMeme = {
     selectedImgId: 0,
     selectedImgData: null,

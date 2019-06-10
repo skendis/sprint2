@@ -21,7 +21,7 @@ function renderWordsCloud() {
     var strHTML = '';
 
     for (var keyword in gKeywords) {
-        strHTML += `<span class="keyword" style="font-size:${gKeywords[keyword] * 0.4}rem" onclick="renderImages('${keyword}')">${keyword}</span>`
+        strHTML += `<span class="keyword" style="font-size:${gKeywords[keyword] * 0.3}rem" onclick="renderImages('${keyword}')">${keyword}</span>`
     }
     $('.words-cloud').html(strHTML);
 }

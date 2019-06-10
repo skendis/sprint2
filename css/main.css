@@ -342,7 +342,6 @@ footer {
 
 /* Layout */
 
-
 /* Helpers */
 
 .flex {
@@ -410,28 +409,42 @@ footer {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 768px) {
-    body {
-        background-color: red;
-    }
     .gallery img {
         max-width: 9.125rem;
         height: 9.125rem;
     }
     .container {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
     }
     .about {
         flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .about-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .about-title{
+        display: flex;
+        justify-content: center;
+    }
+    .about-description{
+        display: flex;
+        justify-content: center;
+    }
+    .editor-menu {
+        width: 22.4375rem;
+        padding: 1.25rem;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
 @media only screen and (min-width: 768px) {
-    body {
-        background-color: blue;
-    }
     .gallery img {
         max-width: 15.125rem;
         height: 15.125rem;
@@ -443,15 +456,11 @@ footer {
     .about {
         flex-wrap: wrap;
     }
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1000px) {
-    body {
-        background-color: white;
-    }
     .gallery img {
         max-width: 10.125rem;
         height: 10.125rem;
@@ -460,7 +469,7 @@ footer {
         padding-left: 7.25rem;
         padding-right: 7.25rem;
     }
-    .about{
+    .about {
         flex-wrap: nowrap;
     }
 }
