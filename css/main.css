@@ -69,8 +69,8 @@ header a:hover {
     text-transform: capitalize;
     font-size: 1.2rem;
     text-align: center;
-    width: 70px;
-    height: 70px;
+    width: 4.375rem;
+    height: 4.375rem;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -135,18 +135,18 @@ header a:hover {
 }
 
 .gallery img {
-    max-width: 100px;
-    height: 100px;
+    max-width: 6.25rem;
+    height: 6.25rem;
     object-fit: cover;
-    margin: 5px;
+    margin: 0.3125rem;
     border-radius: 15px;
 }
 
 /* editor */
 
 .editor {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
     background-color: #323232;
 }
 
@@ -155,32 +155,35 @@ header a:hover {
 }
 
 .dialog-buttons {
-    padding: 20px;
+    padding: 1.25rem;
 }
 
+.canvas-container{
+    width: 45rem;;
+}
 .editor-menu {
     flex-grow: 0;
-    max-width: 320px;
+    width: 23.4375rem;
     justify-content: space-between;
     background-color: #323232;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .edit-box {
     flex-grow: 0;
-    max-width: 320px;
+    width: 100%;
 }
 
 .editor-btn {
     background-color: #323232;
     color: white;
-    padding: 10px;
+    padding: 0.625rem;
     cursor: pointer;
     border-radius: 5px;
     box-sizing: border-box;
     transition: .3s;
     flex-grow: 1;
-    margin: 2px;
+    margin: 0.125rem;
 }
 
 .editor-btn:hover {
@@ -197,14 +200,14 @@ header a:hover {
     background-color: #323232;
     color: white;
     flex-grow: 1;
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 .font-picker {
     background-color: #323232;
     color: white;
     flex-grow: 1;
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 .line-text-input {
@@ -218,8 +221,8 @@ header a:hover {
 }
 
 .line-text-input>input[type=text] {
-    border-radius: 5px;
-    padding-left: 5px;
+    border-radius: 0.3125rem;
+    padding-left: 0.3125rem;
 }
 
 .line-text-input>input[type="text"] {
@@ -233,9 +236,9 @@ header a:hover {
 }
 
 .jscolor {
-    margin-left: 12px;
+    margin-left: 0.75rem;
     border-radius: 4px;
-    height: 30px;
+    height: 1.875rem;
 }
 
 .download-btn {
@@ -246,10 +249,10 @@ header a:hover {
 
 .about {
     background-color: #2eb398;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 68px;
-    padding-bottom: 68px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 4.25rem;
+    padding-bottom: 4.25rem;
 }
 
 .about-title {
@@ -269,18 +272,18 @@ header a:hover {
     color: #fff;
     font-family: 'Lato-regular', sans-serif;
     line-height: 1.83;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 .about-img {
-    padding-left: 19px;
-    padding-right: 19px;
+    padding-left: 1.1875rem;
+    padding-right: 1.1875rem;
 }
 
 .about-img img {
     border-radius: 100%;
-    width: 180px;
-    height: 180px;
+    width: 11.25rem;
+    height: 11.25rem;
     object-fit: cover;
     
 }
