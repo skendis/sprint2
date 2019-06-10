@@ -1,5 +1,61 @@
 'use strict'
 
+
+function renderControls() {
+
+    const lines = getLines();
+    let idx = 0;
+    let strHtmls = lines.map(function (line) {
+        return `<!-- CONTROL START -->
+                <div class="editor-menu">
+                    <div class="line-text-input">
+                        <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
+                            onkeyup="onChangeText(${idx},this.value)">
+                        <button class="editor-btn" onclick="openEditBox(${idx})"><i class="fas fa-sliders-h"></i></button>
+                    </div>
+                    <div id="editbox-${idx}" class="edit-box flex flex-wrap display-none">
+                        <div class="color-picker flex align-center">
+                            <i class="fas fa-paint-brush"></i>
+                            <input class="jscolor" onchange="onChangeColor(${idx},this.value)">
+                        </div>
+                        <div class="font-picker flex align-center">
+                            <i class="fas fa-font"></i>
+                            <select onchange="onFontChange(${idx},this.value)">
+                                <option value="Impact">Impact</option>
+                                <option value="lato-regular">Lato</option>
+                                <option value="arial">Arial</option>
+                            </select>
+                        </div>
+                        <button class="editor-btn" onclick="onUpText(${idx})"><i class="fas fa-arrow-up"></i></button>
+                        <button class="editor-btn" onclick="onDownText(${idx})"><i class="fas fa-arrow-down"></i></button>
+                        <button class="editor-btn" onclick="onIncreaseText(${idx})"><i class="fas fa-plus"></i></button>
+                        <button class="editor-btn" onclick="onDecreaseText(${idx})"><i class="fas fa-minus"></i></button>
+                        <button class="editor-btn" onclick="onChangeAlign('left',${idx})"><i class="fas fa-align-left"></i></button>
+                        <button class="editor-btn" onclick="onChangeAlign('center',${idx})"><i
+                                class="fas fa-align-center"></i></button>
+                        <button class="editor-btn" onclick="onChangeAlign('right',${idx++})"><i
+                                class="fas fa-align-right"></i></button>
+                    </div>
+                </div>
+                <!-- CONTROL END -->`
+
+    })
+    strHtmls = strHtmls.join('');
+    strHtmls += `<div class="dialog-buttons flex justify-center">
+                    <a class="editor-btn download-btn flex justify-center" href="#" onclick="saveImg(this)"
+                        download="">Download</a>
+                    <button class="editor-btn flex justify-center" onclick="closeEditor()">close editor</i></button>
+                </div>`
+    $('.editor-controls').html(strHtmls);
+
+    //init the color picker after dynamic render to dom
+    jscolor.installByClassName('jscolor');
+}
+
+function openEditBox(id){
+    $(`#editbox-${id}`).toggle('display-none');
+}
+
 function saveImg(elLink) {
     const data = canvas.toDataURL();
     elLink.href = data;
@@ -45,7 +101,7 @@ function onFontChange(line, font) {
     changeFont(font, line);
     renderCanvas();
 }
-function closeEditor(){
+function closeEditor() {
     $('.editor').addClass('display-none');
 }
 function textAlign(canvasWidth, align) {

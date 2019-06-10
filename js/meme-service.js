@@ -10,6 +10,10 @@ var gImgs = [
     { id: 6, url: 'images/img6.jpg', keywords: ['happy'] },
     { id: 7, url: 'images/img7.jpg', keywords: ['happy'] },
     { id: 8, url: 'images/img8.jpg', keywords: ['happy'] },
+    { id: 9, url: 'images/img9.jpg', keywords: ['happy'] },
+    { id: 10, url: 'images/img10.jpg', keywords: ['happy'] },
+    { id: 11, url: 'images/img11.jpg', keywords: ['happy'] },
+    { id: 12, url: 'images/img12.jpg', keywords: ['funny puk', 'happy'] },
 
 ];
 var gMeme = {
@@ -38,14 +42,16 @@ function returnImageByIdx(imageIdx) {
 }
 //get all imgs or filterd imgs
 function getImgsForDisplay(keyword = null) {
-return gImgs
+    return gImgs
 }
 function addLine(newLine) {
     const line = {
-        line: newLine.line,
-        size: newLine.size,
-        align: newLine.align,
-        color: newLine.color
+        line: '',
+        size: 40,
+        align: 'center',
+        color: 'white',
+        font: 'Impact',
+        yPos: 0.5
     }
     gMeme.push(line);
 }
@@ -75,4 +81,7 @@ function changeYpos(idx, amount) {
 }
 function changeSelectedImgId(id) {
     gMeme.selectedImgId = id;
+}
+function getLines() {
+    return gMeme.txts;
 }

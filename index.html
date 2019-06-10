@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Meme generator</title>
 </head>
-
 <body onload="init()">
     <header class="flex container justify-center align-center">
         <div class="hexagon flex justify-center align-center">
@@ -30,79 +29,15 @@
             <canvas id="meme-canvas" width="300" height="300"></canvas>
         </div>
         <div class="editor-controls">
-            <!-- CONTROL START -->
-            <div class="editor-menu flex flex-wrap">
-                <div class="line-text-input">
-                    <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
-                        onkeyup="onChangeText(0,this.value)">
-                    <button class="editor-btn"><i class="fas fa-sliders-h"></i></button>
-                </div>
-                <div class="color-picker flex align-center">
-                    <i class="fas fa-paint-brush"></i>
-                    <input class="jscolor" onchange="onChangeColor(0,this.value)">
-                </div>
-                <div class="font-picker flex align-center">
-                    <i class="fas fa-font"></i>
-                    <select onchange="onFontChange(0,this.value)">
-                        <option value="Impact">Impact</option>
-                        <option value="lato-regular">Lato</option>
-                        <option value="arial">Arial</option>
-                    </select>
-                </div>
-                <button class="editor-btn" onclick="onUpText(0)"><i class="fas fa-arrow-up"></i></button>
-                <button class="editor-btn" onclick="onDownText(0)"><i class="fas fa-arrow-down"></i></button>
-                <button class="editor-btn" onclick="onIncreaseText(0)"><i class="fas fa-plus"></i></button>
-                <button class="editor-btn" onclick="onDecreaseText(0)"><i class="fas fa-minus"></i></button>
-                <button class="editor-btn" onclick="onChangeAlign('left',0)"><i class="fas fa-align-left"></i></button>
-                <button class="editor-btn" onclick="onChangeAlign('center',0)"><i
-                        class="fas fa-align-center"></i></button>
-                <button class="editor-btn" onclick="onChangeAlign('right',0)"><i
-                        class="fas fa-align-right"></i></button>
-            </div>
-            <!-- CONTROL END -->
-            <!-- CONTROL START -->
-            <div class="editor-menu flex flex-wrap">
-                <div class="line-text-input">
-                    <input type="text" name="line-input" id="" placeholder="Your line" class="line-input"
-                        onkeyup="onChangeText(1,this.value)">
-                    <button class="editor-btn"><i class="fas fa-sliders-h"></i></button>
-                </div>
-                <div class="color-picker flex align-center">
-                    <i class="fas fa-paint-brush"></i>
-                    <input class="jscolor" onchange="onChangeColor(1,this.value)">
-                </div>
-                <div class="font-picker flex align-center space-between">
-                    <i class="fas fa-font"></i>
-                    <select onchange="onFontChange(1,this.value)">
-                        <option value="Impact">Impact</option>
-                        <option value="lato-regular">Lato</option>
-                        <option value="arial">Arial</option>
-                    </select>
-                </div>
-                <button class="editor-btn" onclick="onUpText(1)"><i class="fas fa-arrow-up"></i></button>
-                <button class="editor-btn" onclick="onDownText(1)"><i class="fas fa-arrow-down"></i></button>
-                <button class="editor-btn" onclick="onIncreaseText(1)"><i class="fas fa-plus"></i></button>
-                <button class="editor-btn" onclick="onDecreaseText(1)"><i class="fas fa-minus"></i></button>
-                <button class="editor-btn" onclick="onChangeAlign('left',1)"><i class="fas fa-align-left"></i></button>
-                <button class="editor-btn" onclick="onChangeAlign('center',1)"><i
-                        class="fas fa-align-center"></i></button>
-                <button class="editor-btn" onclick="onChangeAlign('right',1)"><i
-                        class="fas fa-align-right"></i></button>
-            </div>
-            <!-- CONTROL END -->
 
-            <div class="dialog-buttons flex justify-center">
-                <a class="editor-btn flex justify-center" href="#" onclick="saveImg(this)" download="">Download</a>
-                <button class="editor-btn flex justify-center" onclick="closeEditor()">close editor</i></button>
-            </div>
         </div>
 
     </section>
     <section class="gallery container flex flex-wrap justify-center">
     </section>
 
-    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
     <script src="lib/jscolor-2.0.5/jscolor.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/util-service.js"></script>
     <script src="js/canvas-controller.js"></script>

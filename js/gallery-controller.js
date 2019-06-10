@@ -17,6 +17,7 @@ function renderImages() {
 
 function openEditor(imgIdx){
     changeSelectedImgId(imgIdx);
+    renderControls();
     renderCanvas();
     $('.editor').removeClass('display-none');
 }

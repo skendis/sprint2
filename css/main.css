@@ -159,6 +159,10 @@ header a:hover {
     background-color: #323232;
     padding: 20px;
 }
+.edit-box{
+    flex-grow: 0;
+    max-width: 320px;
+}
 .editor-btn {
     background-color: #323232;
     color: white;
