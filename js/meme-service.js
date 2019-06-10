@@ -19,6 +19,21 @@ var gImgs = [
     { id: 10, url: 'images/img10.jpg', keywords: ['fingers', 'funny'] },
     { id: 11, url: 'images/img11.jpg', keywords: ['happy'] },
     { id: 12, url: 'images/img12.jpg', keywords: ['fingers'] },
+    { id: 13, url: 'images/img13.jpg', keywords: ['happy'] },
+    { id: 14, url: 'images/img14.jpg', keywords: ['happy'] },
+    { id: 15, url: 'images/img15.jpg', keywords: ['happy'] },
+    { id: 16, url: 'images/img16.jpg', keywords: ['happy'] },
+    { id: 17, url: 'images/img17.jpg', keywords: ['happy'] },
+    { id: 18, url: 'images/img18.jpg', keywords: ['happy'] },
+    { id: 19, url: 'images/img19.jpg', keywords: ['happy'] },
+    { id: 20, url: 'images/img20.jpg', keywords: ['happy'] },
+    { id: 21, url: 'images/img21.jpg', keywords: ['happy'] },
+    { id: 22, url: 'images/img22.jpg', keywords: ['happy'] },
+    { id: 23, url: 'images/img23.jpg', keywords: ['happy'] },
+    { id: 24, url: 'images/img24.jpg', keywords: ['happy'] },
+    { id: 25, url: 'images/img25.jpg', keywords: ['happy'] },
+    { id: 26, url: 'images/img26.jpg', keywords: ['happy'] },
+
  ];
 var gMeme = {
     selectedImgId: 0,

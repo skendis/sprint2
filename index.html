@@ -10,19 +10,25 @@
     <title>Meme generator</title>
 </head>
 
-<body onload="init()">
-    <header class="flex container justify-center align-center">
-        <div class="hexagon flex justify-center align-center">
-            <div class="logo"></div>
-        </div>
-        <nav class="main-nav full-width">
-            <ul class="nav-bar clean-list flex justify-center align-center space-between">
-                <li><a href="">portfolio</a></li>
-                <li><a href="">about</a></li>
-                <li><a href="">blog</a></li>
-                <li><a href="">get in touch</a></li>
-            </ul>
+<body>
+
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+                Meme Generator
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
         </nav>
+
     </header>
     <!-- Editor section -->
     <section class="editor container flex flex-wrap justify-center display-none">
@@ -38,10 +44,10 @@
     </section>
 
     <!-- Gallery section -->
-    <section class="gallery container flex flex-wrap justify-center">
+    <section id="gallery" class="gallery container flex flex-wrap justify-center">
     </section>
     <!-- About section -->
-    <section class="about flex container">
+    <section id="about" class="about flex container">
         <div class='about-img flex justify-center align-center'>
             <img src="assets/sergei-profile.jpg" alt="" srcset="">
         </div>
@@ -63,7 +69,7 @@
         </div>
     </section>
     <!-- About section -->
-    <section class="about flex container">
+    <section  class="about flex container">
         <div class='about-img flex justify-center align-center'>
             <img src="assets/tamir-profile.jpg" alt="" srcset="">
         </div>
@@ -78,7 +84,8 @@
                 dui non urna
             </p>
             <div class="social-bar flex">
-                <a class="linkedin" href="https://www.linkedin.com/in/tamirlevital"><i class="fab fa-linkedin-in"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/tamirlevital"><i
+                        class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>

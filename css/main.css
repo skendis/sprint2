@@ -29,8 +29,6 @@
 html {
     font-family: 'lato-regular', sans-serif;
     color: #626262;
-    /* line-height: 1.83rem;
-    line-height: 1.83em; */
 }
 
 body {
@@ -43,8 +41,64 @@ ul, li {
     margin: 0;
 }
 
+/* nav */
+
+.logo {
+    line-height: 60px;
+    position: absolute;
+    float: left;
+    margin: 16px 46px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+nav {
+    width: 100%;
+    line-height: 60px;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background-color: #323232;
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background-color: #323232;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
 /* Header */
 
+/* 
 header {
     background-color: #323232;
     height: 4.75rem;
@@ -60,10 +114,11 @@ header a {
 header a:hover {
     color: #2eb398;
     text-decoration-line: underline;
-}
+} */
 
 /* Logo */
 
+/* 
 .logo {
     color: #ffffff;
     text-transform: capitalize;
@@ -125,7 +180,7 @@ header a:hover {
     top: 100%;
     width: 0;
     border-top: 28.87px solid #323232;
-}
+} */
 
 /* Gallery */
 
@@ -409,6 +464,31 @@ footer {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 768px) {
+    /* nav */
+    .logo {
+        top: 0;
+        margin-top: 16px;
+    }
+    nav{
+        background-color: #323232;
+    }
+    nav ul {
+        max-height: 0px;
+        background-color: #323232;
+    }
+    .showing {
+        max-height: 34em;
+    }
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px;
+        text-align: center;
+        
+    }
+    .menu-icon {
+        display: block;
+    }
     .gallery img {
         max-width: 9.125rem;
         height: 9.125rem;
@@ -423,16 +503,16 @@ footer {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    .about-content{
+    .about-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .about-title{
+    .about-title {
         display: flex;
         justify-content: center;
     }
-    .about-description{
+    .about-description {
         display: flex;
         justify-content: center;
     }
