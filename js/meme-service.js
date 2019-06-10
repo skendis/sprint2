@@ -1,6 +1,9 @@
 'use strict'
 
-var gKeywords = { 'happy': 12, 'funny puk': 1 }
+var gKeywords = {
+    'happy': 12,
+    'funny': 4,
+}
 var gImgs = [
     { id: 1, url: 'images/img1.jpg', keywords: ['happy'] },
     { id: 2, url: 'images/img2.jpg', keywords: ['happy'] },
@@ -51,7 +54,7 @@ function getImagesForDisplay(keyword = null) {
         var regex = RegExp(`${lcKeyword}`);
         return regex.test(image.keywords);
     })
- }
+}
 
 function addLine() {
     let line;

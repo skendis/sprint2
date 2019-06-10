@@ -2,4 +2,5 @@
 
 function init(){
     renderImages();
+    renderWordsCloud();
 }

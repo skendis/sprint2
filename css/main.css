@@ -158,9 +158,11 @@ header a:hover {
     padding: 1.25rem;
 }
 
-.canvas-container{
-    width: 45rem;;
+.canvas-container {
+    width: 45rem;
+    ;
 }
+
 .editor-menu {
     flex-grow: 0;
     width: 23.4375rem;
@@ -285,14 +287,25 @@ header a:hover {
     width: 11.25rem;
     height: 11.25rem;
     object-fit: cover;
-    
+}
+
+/* Search */
+.search{
+    padding: 3.125rem 0 0;
+}
+
+
+.words-cloud .keyword {
+    cursor: pointer;
+    line-height: 1em;
+    text-transform: uppercase;
 }
 
 /* Layout */
 
 .container {
-    padding-left: 6.25rem;
-    padding-right: 6.25rem;
+    /* padding-left: 6.25rem; */
+    /* padding-right: 6.25rem; */
 }
 
 /* Helpers */
