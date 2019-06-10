@@ -14,7 +14,7 @@ function renderControls() {
                             onkeyup="onChangeText(${idx},this.value)">
                         <button class="editor-btn" onclick="openEditBox(${idx})"><i class="fas fa-sliders-h"></i></button>
                         ${idx===length-1?`<button class="editor-btn" onclick="onAddText()"><i class="fas fa-plus"></i></button>`:``}
-                        ${idx===0?``:`<button class="editor-btn" onclick="onRemoveText(${idx})"><i class="fas fa-minus"></i></button>`}
+                        ${idx===0?``:`<button class="editor-btn" onclick="onRemoveText(${idx})"><i class="far fa-trash-alt"></i></button>`}
                     </div>
                     <div id="editbox-${idx}" class="edit-box flex flex-wrap display-none">
                         <div class="color-picker flex align-center">
@@ -116,6 +116,7 @@ function onFontChange(line, font) {
 }
 function closeEditor() {
     $('.editor').addClass('display-none');
+    resetTexts();
 }
 function textAlign(canvasWidth, align) {
     var pos;

@@ -81,7 +81,6 @@ function addLine() {
             break;
     }
     gMeme.txts.push(line);
-    console.log(gMeme.txts.length);
 }
 function changeText(str, idx) {
     gMeme.txts[idx].line = str;
@@ -112,4 +111,24 @@ function changeSelectedImgId(id) {
 }
 function getLines() {
     return gMeme.txts;
+}
+function resetTexts() {
+    gMeme.txts = [
+        {
+            line: 'new line',
+            size: 40,
+            align: 'center',
+            color: 'white',
+            font: 'Impact',
+            yPos: 0.2
+        },
+        {
+            line: 'new line',
+            size: 40,
+            align: 'center',
+            color: 'white',
+            font: 'Impact',
+            yPos: 0.9
+        },
+    ]
 }
